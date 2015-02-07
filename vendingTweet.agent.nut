@@ -18,7 +18,7 @@ sales <- ["Sales are up 64% since last year!",
 "Ah, excellent, another valued customer!",
 "Feeling overburdened by money?",
 "A fantastic day for capitalism!",
-"Luke, I am your father!"];
+"Vend, I am your father!"];
 
 dry <- ["Well that\'s enough to drink for today!",
 "Whew, let me cool off for a minute.",
