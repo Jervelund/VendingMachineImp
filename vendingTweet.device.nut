@@ -3,8 +3,17 @@
 local uart_str = "";
 local ArrayD = [0,0,0,0,0,0,0];
 local ArrayJ = [0,0,0,0,0,0,0];
-local ArrayR = [0,0,0,0,0,0,0];
 local lastSalesCount = 0;
+
+function buildArray(str){
+  local newArray = [0,0,0,0,0,0,0];
+  local index = 0;
+  for(local i=0;str.len()>i;i++){
+    index = str[i].tointeger()-'0';
+    newArray[index] = 1;
+  }
+  return newArray;
+}
 
 function parseData(str){
   local substr = str.slice(1);
@@ -17,13 +26,37 @@ function parseData(str){
       lastSalesCount = newSalesCount;
     break;
     case 'J': // Jammed slot
-      //server.log("J: "+str);
+      local newArray = buildArray(substr);
+      local change = 0;
+      // Check for changes
+      for(local i=0;newArray.len()>i;i++){
+        change = newArray[i]-ArrayJ[i];
+        if(change == 1){
+          agent.send("jam",i);
+        }
+        if(change == -1){
+          agent.send("unjam",i);
+        }
+      }
+      ArrayJ = newArray;
     break;
     case 'D': // Dry slot
-      //server.log("D: "+str);
+      local newArray = buildArray(substr);
+      local change = 0;
+      // Check for changes
+      for(local i=0;newArray.len()>i;i++){
+        change = newArray[i]-ArrayD[i];
+        if(change == 1){
+          agent.send("dry",i);
+        }
+        if(change == -1){
+          agent.send("undry",i);
+        }
+      }
+      ArrayD = newArray;
     break;
-    case 'R': // Return tray empty
-      //server.log("R: "+str);
+    case 'R': // coin Return tray empty
+      // Todo
     break;
     default:
       server.log("UNKNOWN STR: "+str);
@@ -48,12 +81,3 @@ function uartData(){
 
 arduino <- hardware.uart57;
 arduino.configure(57600, 8, PARITY_NONE, 1, NO_CTSRTS, uartData);
-
-//agent.send("Tweet","Dammit, RaspberryPI. Stop frying your SD cards!");
-//agent.send("sales","2000");
-
-//agent.send("jam","2");
-//agent.send("unjam","2");
-
-//agent.send("dry","2");
-//agent.send("undry","2");
