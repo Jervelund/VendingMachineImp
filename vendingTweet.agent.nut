@@ -46,10 +46,10 @@ device.on("Tweet", function(v) {
 function randomInt(i){return math.floor(i * (1.0 * math.rand() / RAND_MAX));}
 
 device.on("sales",function(i){twitter.update_status(sales[randomInt(sales.len())] + " (total vend count is now " + i + ")");})
-device.on("dry"  ,function(i){server.log(  dry[randomInt(  dry.len())] + " (slot " + i + " is empty) @CUnnerup");})
-device.on("undry",function(i){server.log(undry[randomInt(undry.len())] + " (slot " + i + " refilled)");})
-device.on("jam"  ,function(i){server.log(  jam[randomInt(  jam.len())] + " (slot " + i + " jammed) @CUnnerup");})
-device.on("unjam",function(i){server.log(unjam[randomInt(unjam.len())] + " (slot " + i + " is no longer jammed)");})
+device.on("dry"  ,function(i){twitter.update_status(  dry[randomInt(  dry.len())] + " (slot " + i + " is empty) @CUnnerup");})
+device.on("undry",function(i){twitter.update_status(undry[randomInt(undry.len())] + " (slot " + i + " refilled)");})
+device.on("jam"  ,function(i){twitter.update_status(  jam[randomInt(  jam.len())] + " (slot " + i + " jammed) @CUnnerup");})
+device.on("unjam",function(i){twitter.update_status(unjam[randomInt(unjam.len())] + " (slot " + i + " is no longer jammed)");})
 
 // Source: https://github.com/joel-wehr/Tutorial_Electric_Imp_MAX31855/blob/ef38b0fec29ec619e2c58ef2fd62e1c9776e85d3/agent.nut
 //********************BEGIN TWITTER*****************
