@@ -21,7 +21,7 @@ function parseData(str){
     case 'B': // Bought beverages in total
       local newSalesCount = substr.tointeger();
       if(lastSalesCount > 0 && lastSalesCount != newSalesCount){
-        agent.send("sales",lastSalesCount);
+        agent.send("sales",newSalesCount);
       }
       lastSalesCount = newSalesCount;
     break;
