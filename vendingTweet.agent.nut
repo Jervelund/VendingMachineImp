@@ -12,25 +12,40 @@ sales <- ["Sales are up 64% since last year!",
 "HAL ain\'t got nothing on me!",
 "A cold beverage. Shaken, not stirred.",
 "Hasta la venda, Baby!",
-"Madness? This is BEVERAGES!",
+"Madness? THIS IS BEVERAGES!",
 "To vend, or not to vend. That is the question.",
 "A day without vending is like a day without sunshine.",
 "Ah, excellent, another valued customer!",
 "Feeling overburdened by money?",
 "A fantastic day for capitalism!",
-"Vend, I am your father!"];
+"Vend, I am your father!",
+"It's a me, Vending Machine!",
+"Take this. It's dangerous to go alone.",
+"M-M-M-M-M-MONSTER VEND!",
+"A Wild Beverage Appears!",
+"Vending Machine used Vend. It's super effective!",
+"Job's done!",
+"Get busy living, or get busy buying.",
+"Come with me if you want to vend!",
+"Life's like the random button on a vending machine. You never know what you gonna get.",
+"May the vend be with you."
+];
 
 dry <- ["Well that\'s enough to drink for today!",
 "Whew, let me cool off for a minute.",
 "It\'s not you - it\'s me.",
+"Dangit, I'm out!",
 "It\'s time to kick ass and vend beverages - and I\'m all out of beverages!",
-"I find my lack of beverages disturbing."];
+"I find my lack of beverages disturbing.",
+"Do not try to vend the beverage. That's impossible. Instead only try to realize the truth: There is no beverage."
+];
 
 undry <- ["Bring the big wallet, I\'m restocked!",
 "Back on track, and ready to vend!"];
 
 jam <- ["Ugh - I don\'t feel so good.",
 "I\'ll be back!",
+"I used to vend beverages, but then I took an arrow to the knee!",
 "I just can\'t do it captain - I don\'t have the power!"];
 
 unjam <- ["I feel better already!",
